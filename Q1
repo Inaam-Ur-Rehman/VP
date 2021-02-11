@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Final_Paper
+{
+    public partial class Form1 : Form
+    {
+        DataTable dtWeather = new DataTable();
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            dtWeather.Columns.Add("CityName");
+            dtWeather.Columns.Add("MaxTemp");
+            dtWeather.Columns.Add("MinTemp");
+            dtWeather.Columns.Add("ClimateType");
+            dtWeather.Rows.Add("Islamabad", "23", "8", "Cloudy");
+
+            lblCity.Text = dtWeather.Rows[0]["CityName"].ToString();
+            lblType.Text = dtWeather.Rows[0]["ClimateType"].ToString();
+            lblMax.Text = dtWeather.Rows[0]["MaxTemp"].ToString()+" C";
+            lblMin.Text = dtWeather.Rows[0]["MinTemp"].ToString()+" C";
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMinHead_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+
